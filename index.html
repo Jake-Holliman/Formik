@@ -1,31 +1,44 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>ToDo</title>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="styles.css">
+		<!-- descriptors -->
+		<title>To-Do List</title>
+		<meta name="description" content="A To-Do List" />
+		<link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 
-    <!-- don't use this in production: -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  </head>
-  <body>
+		<!-- css -->
+		<link rel="stylesheet" href="style.css" />
+		<!-- babel -->
+		<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+		<!-- fonts and bootstrap icones -->
+		<link rel="stylesheet" href="https://use.typekit.net/gnv0vjh.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+		/>
+	</head>
+	<body>
+		<div class="root" id="root"></div>
 
-    <h1>ToDo</h1>
+		<!-- Load React. -->
+		<!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+		<script
+			src="https://unpkg.com/react@17/umd/react.production.min.js"
+			crossorigin
+		></script>
+		<script
+			src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"
+			crossorigin
+		></script>
 
-    <!-- we will put our teact component inside this div -->
-    <div id="root"></div>
+		<!-- Load our React component. -->
 
-    <!-- load react -->
-    <script src="https://unpkg.com/react/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js" crossorigin></script>
-
-    <!-- load our react component. -->
-
-    <script src="todo.js" defer type="text/babel"></script>
-    <script src="form.js" defer type="text/babel"></script>
-    <script src="index.js" defer type="text/babel"></script>
-
-
-  </body>
+		<script src="./form.js" defer type="text/babel"></script>
+		<script src="./todo.js" defer type="text/babel"></script>
+		<script src="./app.js" defer type="text/babel"></script>
+	</body>
 </html>
