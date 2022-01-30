@@ -1,23 +1,34 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
-import Basic from './Basic';
-import './style.css';
+function App(){
+  const [todos, setTodos] = React.useState([
+ 
+  ]);
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      name: 'React'
-    };
-  }
 
-  render() {
-    return (
-      <div>
-        <Basic />
-      </div>
-    );
-  }
+    const addTodo = text => {
+      const newTodos = [...todos, {text:text, isCompleted:false}];
+      setTodos(newTodos);
+    }
+
+
+    const removeTodo = index => {
+      let temp = [...todos];
+      temp.splice(index, 1);
+      setTodos(temp);
+    }
+
+  return(
+    <div className="app">
+        <div className="todo-list">
+      {todos.map((todo, i) => (
+       <Todo index={i} key={i} todo={todo} remove={removeTodo} />
+      ))}
+    <TodoForm addTodo={addTodo} /></div>
+    </div>
+    
+  );
 }
 
-render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <App/>,
+  document.getElementById('root')
+);
